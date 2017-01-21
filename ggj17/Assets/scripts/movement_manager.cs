@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class movement_manager : MonoBehaviour
 {
-    public float move_speed = 7;
-    public float jump_height = 7;
+    public float move_speed = 7.0f;
+    public float jump_height = 7.0f;
     public bool is_ground = false;
     public bool is_free_to_walk = true;
 
@@ -21,9 +21,9 @@ public class movement_manager : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-		
+        
     }
-	
+    
     // Update is called once per frame
     void Update ()
     {
@@ -57,7 +57,9 @@ public class movement_manager : MonoBehaviour
         //JUMP
         if (Input.GetAxisRaw ("Vertical") > 0 && is_ground) {
             //fix it
-            GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jump_height, ForceMode2D.Impulse);
+//            GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jump_height, ForceMode2D.Impulse);
+
+            GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, jump_height * 3);
         }
     }
 
