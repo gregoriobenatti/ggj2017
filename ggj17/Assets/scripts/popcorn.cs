@@ -38,7 +38,8 @@ public class popcorn : MonoBehaviour
 
     public void mameluco_test ()
     {
-        GameObject new_popcorn = (GameObject)Instantiate (popcorn_prefab);
+        print ("mameluco...");
+//        GameObject new_popcorn = (GameObject)Instantiate (popcorn_prefab);
         popcorn_prefab.transform.Translate (new Vector2 (Random.Range (-250, -200), Random.Range (80, 85)));
     }
 }

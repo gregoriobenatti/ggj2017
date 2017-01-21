@@ -38,7 +38,7 @@ public class game_manager : MonoBehaviour
     public void hello ()
     {
         print ("HELLO MOTHERFOCA...");
-        popcorn.Instance.mameluco_test ();
+//        popcorn.Instance.mameluco_test ();
     }
 
     public void LoadLevel (string Scene)

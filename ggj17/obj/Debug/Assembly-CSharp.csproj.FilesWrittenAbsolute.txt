@@ -19,3 +19,5 @@
 /Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/UnityEngine.Advertisements.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/UnityEngine.Purchasing.dll
