@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class movement_manager : MonoBehaviour
 {
-    public float move_speed, jump_height;
+    public float move_speed = 7;
+    public float jump_height = 7;
     public bool is_ground = false;
-    public bool change_direction = false;
+    public bool is_free_to_walk = false;
+
+    private bool change_direction = false;
+
+
+    void flip (int d)
+    {
+        float direction = 0.2f * d;
+        transform.localScale = new Vector2 (direction, transform.localScale.y);
+    }
 
     // Use this for initialization
     void Start ()
@@ -17,22 +27,37 @@ public class movement_manager : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        if (Input.GetAxisRaw ("Horizontal") > 0) {
-            transform.Translate (Vector2.right * Time.deltaTime * move_speed);
-        } else if (Input.GetAxisRaw ("Horizontal") < 0) {
-            transform.Translate (Vector2.left * Time.deltaTime * move_speed);
-        }
-
-        if (Input.GetAxisRaw ("Vertical") > 0 && is_ground) {
-            GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jump_height, ForceMode2D.Impulse);
-        }
-
-        if (is_ground) {
-            if (change_direction) {
-                transform.Translate (Vector2.left * Time.deltaTime * move_speed);
-            } else {
+        if (is_free_to_walk) {
+            // Free walk
+            if (Input.GetAxisRaw ("Horizontal") > 0) {
                 transform.Translate (Vector2.right * Time.deltaTime * move_speed);
+                flip (1);
+            } else if (Input.GetAxisRaw ("Horizontal") < 0) {
+                transform.Translate (Vector2.left * Time.deltaTime * move_speed);
+                flip (-1);
             }
+        } else {
+            //automatic walk
+            if (is_ground) {
+                if (Input.GetAxisRaw ("Horizontal") > 0) {
+                    change_direction = false;
+                } else if (Input.GetAxisRaw ("Horizontal") < 0) {
+                    change_direction = true;
+                }
+                if (change_direction) {
+                    transform.Translate (Vector2.left * Time.deltaTime * move_speed);
+                    flip (-1);
+                } else {
+                    transform.Translate (Vector2.right * Time.deltaTime * move_speed);
+                    flip (1);
+                }
+            }
+        }
+
+        //JUMP
+        if (Input.GetAxisRaw ("Vertical") > 0 && is_ground) {
+            //fix it
+            GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jump_height, ForceMode2D.Impulse);
         }
     }
 
