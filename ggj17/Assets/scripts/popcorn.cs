@@ -22,11 +22,11 @@ public class popcorn : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D obj)
     {
-        print ("popcorn on collision enter");
+//        print ("popcorn on collision enter");
     }
 
     void OnCollisionExit2D (Collision2D obj)
     {
-        print ("popcorn on collision exit");
+//        print ("popcorn on collision exit");
     }
 }
