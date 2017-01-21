@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class game_manager : MonoBehaviour
 {
-
-    // Use this for initialization
-    void Start ()
+    public enum states
     {
-		
+        logo,
+        menu,
+        intro,
+        pause,
+        playing,
+        game_over,
+        game_win
     }
 
-    // Update is called once per frame
-    void Update ()
-    {
-		
-    }
+    public bool isPausePressed = false;
+    public bool isMuted = false;
 
     private static game_manager _instance;
 
@@ -44,4 +45,22 @@ public class game_manager : MonoBehaviour
     {
         Application.LoadLevel (Scene);
     }
+
+    public void LoadLevelAditive (string Scene)
+    {
+        Application.LoadLevelAdditive (Scene);
+    }
+
+    private void Awake ()
+    {
+    }
+
+    private void Update ()
+    {
+        //work on it
+        if (Input.GetKeyDown (KeyCode.Escape) || isPausePressed) { 
+            
+        }
+    }
+
 }
