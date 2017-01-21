@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class game_manager : MonoBehaviour
 {
-    
 
     // Use this for initialization
     void Start ()
     {
 		
     }
-	
+
     // Update is called once per frame
     void Update ()
     {
@@ -38,6 +37,7 @@ public class game_manager : MonoBehaviour
     public void hello ()
     {
         print ("HELLO MOTHERFOCA...");
+        popcorn.Instance.mameluco_test ();
     }
 
     public void LoadLevel (string Scene)

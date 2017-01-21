@@ -7,8 +7,6 @@ public class microwaver : MonoBehaviour
     public float force_constant = 300f;
     private int count_collisions = 0;
 
-    private game_manager gm;
-
     // Use this for initialization
     void Start ()
     {
@@ -24,7 +22,6 @@ public class microwaver : MonoBehaviour
         if (count_collisions > 3) {
             game_manager.Instance.hello ();
             Destroy (gameObject);
-
         }
     }
 
