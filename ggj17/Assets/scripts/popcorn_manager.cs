@@ -37,7 +37,7 @@ public class popcorn_manager : MonoBehaviour
         }
     }
 
-    public void mameluco_test ()
+    public void spawn_new_popcorn ()
     {
         GameObject new_popcorn = (GameObject)Instantiate (popcorn_prefab);
 

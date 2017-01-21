@@ -37,7 +37,7 @@ public class game_manager : MonoBehaviour
 
     public void hello ()
     {
-        popcorn_manager.Instance.mameluco_test ();
+        popcorn_manager.Instance.spawn_new_popcorn ();
     }
 
     public void LoadLevel (string Scene)
