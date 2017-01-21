@@ -14,7 +14,7 @@ public class movement_manager : MonoBehaviour
 
     void flip (int d)
     {
-        float direction = 0.2f * d;
+        float direction = 0.3f * d;
         transform.localScale = new Vector2 (direction, transform.localScale.y);
     }
 
