@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
-    public float force_constant = 800f;
+    public float force_constant = 1200f;
     private int count_collisions = 0;
     public int max_collision = 3;
 
@@ -28,7 +28,6 @@ public class enemy : MonoBehaviour
     void OnCollisionEnter2D (Collision2D obj)
     {
         if ((obj.gameObject.tag == "ground") || (obj.gameObject.tag == "wall_left") || (obj.gameObject.tag == "wall_right")) {
-            print ("on collision");
             count_collisions++;
         }
     }

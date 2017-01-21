@@ -10,36 +10,23 @@ public class popcorn : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-		
+        Vector3 dir = Quaternion.AngleAxis (Random.Range (12, 78), Vector3.forward) * Vector3.right;
+
+        GetComponent<Rigidbody2D> ().AddForce (dir * 10.0f);	
     }
 	
     // Update is called once per frame
     void Update ()
     {
-        //ARRUMAR SAPOHA
     }
 
-    private static popcorn _instance;
-
-    public static popcorn Instance {
-        get {
-            if (_instance == null)
-                _instance = GameObject.FindObjectOfType<popcorn> ();
-
-            if (_instance == null) {
-                GameObject singleton = new GameObject ("popcorn");
-                _instance = singleton.AddComponent<popcorn> ();
-            }
-
-            DontDestroyOnLoad (_instance);
-            return _instance;
-        }
-    }
-
-    public void mameluco_test ()
+    void OnCollisionEnter2D (Collision2D obj)
     {
-        print ("mameluco...");
-//        GameObject new_popcorn = (GameObject)Instantiate (popcorn_prefab);
-        popcorn_prefab.transform.Translate (new Vector2 (Random.Range (-250, -200), Random.Range (80, 85)));
+        print ("popcorn on collision enter");
+    }
+
+    void OnCollisionExit2D (Collision2D obj)
+    {
+        print ("popcorn on collision exit");
     }
 }
