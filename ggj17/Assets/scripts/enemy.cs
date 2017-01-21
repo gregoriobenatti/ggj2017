@@ -14,6 +14,8 @@ public class enemy : MonoBehaviour
         Vector3 dir = Quaternion.AngleAxis (Random.Range (12, 78), Vector3.forward) * Vector3.right;
 
         GetComponent<Rigidbody2D> ().AddForce (dir * force_constant);
+
+        Physics2D.IgnoreLayerCollision (10, 11);
     }
 	
     // Update is called once per frame

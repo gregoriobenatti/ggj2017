@@ -40,6 +40,7 @@ public class popcorn_manager : MonoBehaviour
     public void mameluco_test ()
     {
         GameObject new_popcorn = (GameObject)Instantiate (popcorn_prefab);
+
         new_popcorn.transform.position = popcorn_spwan_point.transform.position;
     }
 

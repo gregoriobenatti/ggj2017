@@ -7,7 +7,7 @@ public class movement_manager : MonoBehaviour
     public float move_speed = 7;
     public float jump_height = 7;
     public bool is_ground = false;
-    public bool is_free_to_walk = false;
+    public bool is_free_to_walk = true;
 
     private bool change_direction = false;
 

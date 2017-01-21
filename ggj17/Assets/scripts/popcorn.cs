@@ -10,9 +10,9 @@ public class popcorn : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        Vector3 dir = Quaternion.AngleAxis (Random.Range (12, 78), Vector3.forward) * Vector3.right;
-
-        GetComponent<Rigidbody2D> ().AddForce (dir * 10.0f);	
+//        Vector3 dir = Quaternion.AngleAxis (Random.Range (12, 78), Vector3.forward) * Vector3.right;
+//
+//        GetComponent<Rigidbody2D> ().AddForce (dir * -10000.0f);	
     }
 	
     // Update is called once per frame
