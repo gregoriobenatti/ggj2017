@@ -63,7 +63,7 @@ public class movement_manager : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D obj)
     {
-        if (obj.gameObject.tag == "ground") {
+        if (obj.gameObject.tag == "ground" || obj.gameObject.tag == "popcorn") {
             is_ground = true;
         }
 
