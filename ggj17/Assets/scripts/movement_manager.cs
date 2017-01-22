@@ -11,6 +11,8 @@ public class movement_manager : MonoBehaviour
 
     private bool change_direction = false;
 
+    public Animator anim;
+
 
     void flip (int d)
     {
@@ -21,7 +23,7 @@ public class movement_manager : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        
+        anim = GetComponent<Animator> ();
     }
     
     // Update is called once per frame
@@ -67,6 +69,10 @@ public class movement_manager : MonoBehaviour
     {
         if (obj.gameObject.tag == "enemy") {
             game_manager.Instance.change_player_life ();
+
+            if (game_manager.Instance.player_initial_life == 0) {
+                anim.SetBool ("player_dead", true);
+            }
         }
 
         if (obj.gameObject.tag == "ground" || obj.gameObject.tag == "popcorn") {

@@ -19,6 +19,13 @@ public class game_manager : MonoBehaviour
     public bool isMuted = false;
     public int player_initial_life = 5;
 
+    IEnumerator  StartedQuest ()
+    {
+        yield return new WaitForSeconds (3.0f);
+
+        LoadLevel ("game_over");
+    }
+
     private static game_manager _instance;
 
     public static game_manager Instance {
@@ -68,9 +75,13 @@ public class game_manager : MonoBehaviour
         player_initial_life -= 1;
 
         if (player_initial_life < 0) {
-            print ("MORREU!!!!!!!!!!!!!!!");
-
+            StartCoroutine (StartedQuest ());
         }
+    }
+
+    public void start_game ()
+    {
+        LoadLevel ("level_01");
     }
 
 }

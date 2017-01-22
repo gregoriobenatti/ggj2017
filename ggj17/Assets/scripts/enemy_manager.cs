@@ -39,7 +39,7 @@ public class enemy_manager : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        if (start_next_wave == true) {
+        if ((start_next_wave == true) && (game_manager.Instance.player_initial_life > 0)) {
             add_enemy ();
 
             start_next_wave = false;
