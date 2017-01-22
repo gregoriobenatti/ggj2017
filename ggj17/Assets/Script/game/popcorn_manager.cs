@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class popcorn_manager : MonoBehaviour
 {
@@ -15,9 +16,9 @@ public class popcorn_manager : MonoBehaviour
     public GameObject popcorn_spwan_point6;
     public GameObject popcorn_spwan_point7;
 
-    public GameObject wave_counter;
-    public GameObject life_counter;
-    public GameObject timer;
+    public Text wave_counter;
+    public Text life_counter;
+    public Text timer;
 
     public float initial_force = 90.0f;
     public float multiply_factor = 3.0f;
@@ -33,7 +34,14 @@ public class popcorn_manager : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-//        life_counter.gameObject.text = "LIVES: " + game_manager.Instance.player_initial_life;
+        int aux = (int)game_manager.Instance.time_left;
+        timer.text = "00:" + aux.ToString ();
+
+        life_counter.text = "LIVES: " + game_manager.Instance.player_initial_life;
+        if (game_manager.Instance.player_initial_life < 0)
+            life_counter.text = "LIVES: 0";
+
+        wave_counter.text = "WAVE: " + game_manager.Instance.wave_in_play;
     }
 
     private static popcorn_manager _instance;

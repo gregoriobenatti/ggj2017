@@ -18,6 +18,8 @@ public class game_manager : MonoBehaviour
     public bool isPausePressed = false;
     public bool isMuted = false;
     public int player_initial_life = 5;
+    public float time_left = 30.0f;
+    public int wave_in_play = 1;
 
     IEnumerator  StartedQuest ()
     {
@@ -70,6 +72,12 @@ public class game_manager : MonoBehaviour
         //work on it
         if (Input.GetKeyDown (KeyCode.Escape) || isPausePressed) { 
             
+        }
+
+        time_left -= Time.deltaTime;
+
+        if (time_left < 0) {
+            StartCoroutine (StartedQuest ());
         }
     }
 
