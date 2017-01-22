@@ -17,21 +17,16 @@ public class game_manager : MonoBehaviour
 
     public bool isPausePressed = false;
     public bool isMuted = false;
-    public int player_initial_life = 50;
+    public int player_initial_life = 5;
     public float time_left = 0f;
     public float time_left_w2 = 0f;
     public float time_left_w3 = 0f;
     public int wave_in_play = 1;
+    public bool is_counting = false;
 
-    IEnumerator  StartedQuest ()
-    {
-        print (">>--> dead");
-        yield return new WaitForSeconds (3.0f);
-        print (">>--> yield dead");
+    public bool game_win_state = false;
+    public bool game_over_state = false;
 
-        GameManager.Instance.ChangeState (GameManager.States.GameOver);
-        GameManager.Instance.LoadLevel ("game_over");
-    }
 
     private static game_manager _instance;
 
@@ -57,12 +52,16 @@ public class game_manager : MonoBehaviour
 
     void Start ()
     {
+        game_win_state = false;
+        game_over_state = false;
+
         reset_timer_and_life ();
+        is_counting = true;
     }
 
     public void reset_timer_and_life ()
     {
-        time_left = 31.0f;
+        time_left = 11.0f;
         time_left_w2 = 61.0f;
         time_left_w3 = 91.0f;
 
@@ -85,29 +84,48 @@ public class game_manager : MonoBehaviour
 
     private void Update ()
     {
-        //work on it
-        if (Input.GetKeyDown (KeyCode.Escape) || isPausePressed) { 
-            
+        wave_time_manager (is_counting);
+
+        if ((time_left < 0) && (player_initial_life > 0)) {
+            game_win ();
+        } else if ((time_left > 0) && (player_initial_life < 1)) {
+            game_over ();
         }
 
-        time_left -= Time.deltaTime;
+    }
 
-        if (time_left < 0) {
-            StartCoroutine (StartedQuest ());
+    public void wave_time_manager (bool is_counting)
+    {
+        if (is_counting) {
+            time_left -= Time.deltaTime;
         }
     }
 
     public void change_player_life ()
     {
         player_initial_life -= 1;
-
-        if (player_initial_life == 0) {
-            StartCoroutine (StartedQuest ());
-        }
     }
 
     public void start_game ()
     {
+    }
+
+    public void game_win ()
+    {
+        game_win_state = true;
+
+        GameManager.Instance.ChangeState (GameManager.States.Win);
+        GameManager.Instance.LoadLevel ("game_win");
+        is_counting = false;
+    }
+
+    public void game_over ()
+    {
+        game_over_state = true;
+
+        GameManager.Instance.ChangeState (GameManager.States.GameOver);
+        GameManager.Instance.LoadLevel ("game_over");
+        is_counting = false;
     }
 
 }

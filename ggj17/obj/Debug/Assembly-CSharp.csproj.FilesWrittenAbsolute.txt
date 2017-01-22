@@ -1,0 +1,17 @@
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/UnityEngine.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/UnityEditor.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/UnityEngine.PlaymodeTestsRunner.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/UnityEngine.HoloLens.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/UnityEngine.VR.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/Mono.Cecil.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/Unity.DataContract.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/gregoriobenatti/Documents/Documents.GIT/ggj2017/ggj17/Temp/bin/Debug/Mono.Cecil.Mdb.dll
