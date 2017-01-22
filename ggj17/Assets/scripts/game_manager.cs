@@ -17,6 +17,7 @@ public class game_manager : MonoBehaviour
 
     public bool isPausePressed = false;
     public bool isMuted = false;
+    public int player_initial_life = 5;
 
     private static game_manager _instance;
 
@@ -59,6 +60,16 @@ public class game_manager : MonoBehaviour
         //work on it
         if (Input.GetKeyDown (KeyCode.Escape) || isPausePressed) { 
             
+        }
+    }
+
+    public void change_player_life ()
+    {
+        player_initial_life -= 1;
+
+        if (player_initial_life < 0) {
+            print ("MORREU!!!!!!!!!!!!!!!");
+
         }
     }
 
