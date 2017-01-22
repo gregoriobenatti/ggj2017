@@ -512,9 +512,9 @@ MonoBehaviour:
   popcorn_spwan_point5: {fileID: 1098515253}
   popcorn_spwan_point6: {fileID: 1780367186}
   popcorn_spwan_point7: {fileID: 1814736436}
-  wave_counter: {fileID: 0}
-  life_counter: {fileID: 0}
-  timer: {fileID: 0}
+  wave_counter: {fileID: 917618020}
+  life_counter: {fileID: 463192002}
+  timer: {fileID: 2080688116}
   initial_force: 90
   multiply_factor: 3
 --- !u!1 &487320856
@@ -889,7 +889,7 @@ MonoBehaviour:
   move_speed: 7
   jump_height: 7
   is_ground: 0
-  is_free_to_walk: 1
+  is_free_to_walk: 0
 --- !u!95 &655772261
 Animator:
   serializedVersion: 3

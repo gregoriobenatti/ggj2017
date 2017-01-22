@@ -17,8 +17,10 @@ public class game_manager : MonoBehaviour
 
     public bool isPausePressed = false;
     public bool isMuted = false;
-    public int player_initial_life = 5;
-    public float time_left = 30.0f;
+    public int player_initial_life = 50;
+    public float time_left = 0f;
+    public float time_left_w2 = 0f;
+    public float time_left_w3 = 0f;
     public int wave_in_play = 1;
 
     IEnumerator  StartedQuest ()
@@ -51,6 +53,20 @@ public class game_manager : MonoBehaviour
     public void hello ()
     {
         popcorn_manager.Instance.spawn_new_popcorn ();
+    }
+
+    void Start ()
+    {
+        reset_timer_and_life ();
+    }
+
+    public void reset_timer_and_life ()
+    {
+        time_left = 31.0f;
+        time_left_w2 = 61.0f;
+        time_left_w3 = 91.0f;
+
+        player_initial_life = 5;
     }
 
     public void LoadLevel (string Scene)
