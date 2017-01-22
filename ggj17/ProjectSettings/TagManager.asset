@@ -6,6 +6,14 @@ TagManager:
   tags:
   - Ground
   - UIButton
+  - popcorn
+  - enemies_spawn_point
+  - enemy
+  - ground
+  - wall_right
+  - wall_left
+  - popcorn_spawn_point
+  - blah
   layers:
   - Default
   - TransparentFX

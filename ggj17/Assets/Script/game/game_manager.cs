@@ -61,7 +61,7 @@ public class game_manager : MonoBehaviour
 
     public void reset_timer_and_life ()
     {
-        time_left = 11.0f;
+        time_left = 31.0f;
         time_left_w2 = 61.0f;
         time_left_w3 = 91.0f;
 
@@ -86,9 +86,9 @@ public class game_manager : MonoBehaviour
     {
         wave_time_manager (is_counting);
 
-        if ((time_left < 0) && (player_initial_life > 0)) {
+        if ((time_left <= 0) && (player_initial_life >= 0)) {
             game_win ();
-        } else if ((time_left > 0) && (player_initial_life < 1)) {
+        } else if ((time_left >= 0) && (player_initial_life <= 0)) {
             game_over ();
         }
 
@@ -112,20 +112,35 @@ public class game_manager : MonoBehaviour
 
     public void game_win ()
     {
+        stop_this_shit ();
+
         game_win_state = true;
 
         GameManager.Instance.ChangeState (GameManager.States.Win);
         GameManager.Instance.LoadLevel ("game_win");
+
         is_counting = false;
+        Destroy (gameObject);
     }
 
     public void game_over ()
     {
+        stop_this_shit ();
+
         game_over_state = true;
 
         GameManager.Instance.ChangeState (GameManager.States.GameOver);
         GameManager.Instance.LoadLevel ("game_over");
+
         is_counting = false;
+        Destroy (gameObject); 
+    }
+
+    public void stop_this_shit ()
+    {
+        GameObject[] gos = GameObject.FindGameObjectsWithTag ("blah");
+        foreach (GameObject go in gos)
+            Destroy (go);
     }
 
 }

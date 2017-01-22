@@ -36,7 +36,6 @@ public class popcorn_manager : MonoBehaviour
     {
         // if not game win and not game over
         if ((game_manager.Instance.game_win_state == false) && (game_manager.Instance.game_over_state == false)) {
-//            print ("SIM");
             int aux = (int)game_manager.Instance.time_left;
             timer.text = "00:" + aux.ToString ();
             if (aux < 10) {
@@ -51,14 +50,7 @@ public class popcorn_manager : MonoBehaviour
 
             wave_counter.text = "WAVE: " + game_manager.Instance.wave_in_play;
 
-
-            //        if ((aux < 0) && game_manager.Instance.player_initial_life < 1) {
-            //            game_manager.Instance.reset_timer_and_life ();
-            //            game_manager.Instance.wave_in_play += 1;
-            //        }
-        } else {
-//            print ("NAO");
-        }
+        } 
     }
 
     private static popcorn_manager _instance;
