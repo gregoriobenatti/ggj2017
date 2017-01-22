@@ -69,6 +69,7 @@ public class movement_manager : MonoBehaviour
     {
         if (obj.gameObject.tag == "enemy") {
             game_manager.Instance.change_player_life ();
+            anim.SetBool ("player_hit", true);
 
             if (game_manager.Instance.player_initial_life == 0) {
                 anim.SetBool ("player_dead", true);

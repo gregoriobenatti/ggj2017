@@ -15,6 +15,10 @@ public class popcorn_manager : MonoBehaviour
     public GameObject popcorn_spwan_point6;
     public GameObject popcorn_spwan_point7;
 
+    public GameObject wave_counter;
+    public GameObject life_counter;
+    public GameObject timer;
+
     public float initial_force = 90.0f;
     public float multiply_factor = 3.0f;
 
@@ -29,7 +33,7 @@ public class popcorn_manager : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-		
+//        life_counter.gameObject.text = "LIVES: " + game_manager.Instance.player_initial_life;
     }
 
     private static popcorn_manager _instance;
