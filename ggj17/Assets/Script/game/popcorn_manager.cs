@@ -77,6 +77,8 @@ public class popcorn_manager : MonoBehaviour
         new_popcorn.transform.position = spawn_points [Random.Range (1, 7)].transform.position;
 
         new_popcorn.GetComponent<Rigidbody2D> ().AddForce (Vector2.up * initial_force, ForceMode2D.Impulse);
+
+        game_manager.Instance.play_action_sound ("SFX_Popcorn_Spawn");
     }
 
 

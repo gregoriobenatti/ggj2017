@@ -62,6 +62,9 @@ public class movement_manager : MonoBehaviour
 //            GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jump_height, ForceMode2D.Impulse);
 
             GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, jump_height * 3);
+
+//            string junp_sfx_name = "SFX_Jump_0" + Random.Range (1, 2);
+            game_manager.Instance.play_action_sound ("SFX_Jump_01");
         }
     }
 
@@ -70,6 +73,8 @@ public class movement_manager : MonoBehaviour
         if (obj.gameObject.tag == "enemy") {
             game_manager.Instance.change_player_life ();
             anim.SetBool ("player_hit", true);
+
+            game_manager.Instance.play_action_sound ("SFX_Hit");
 
             if (game_manager.Instance.player_initial_life == 0) {
                 anim.SetBool ("player_dead", true);

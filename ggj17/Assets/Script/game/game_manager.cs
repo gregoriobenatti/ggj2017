@@ -143,4 +143,11 @@ public class game_manager : MonoBehaviour
             Destroy (go);
     }
 
+    public void play_action_sound (string sound_name)
+    {
+        AudioSource audioSource = gameObject.AddComponent<AudioSource> ();
+        audioSource.clip = Resources.Load (sound_name) as AudioClip;
+        audioSource.Play ();
+    }
+
 }
