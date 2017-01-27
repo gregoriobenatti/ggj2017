@@ -61,11 +61,11 @@ public class game_manager : MonoBehaviour
 
     public void reset_timer_and_life ()
     {
-        time_left = 31.0f;
+        time_left = 61.0f;
         time_left_w2 = 61.0f;
         time_left_w3 = 91.0f;
 
-        player_initial_life = 5;
+        player_initial_life = 10;
     }
 
     public void LoadLevel (string Scene)

@@ -21,7 +21,7 @@ public class popcorn_manager : MonoBehaviour
     public Text timer;
 
     public float initial_force = 90.0f;
-    public float multiply_factor = 3.0f;
+    public float multiply_factor = 5.0f;
 
     private GameObject[] spawn_points;
 

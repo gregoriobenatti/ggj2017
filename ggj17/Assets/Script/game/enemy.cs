@@ -24,6 +24,9 @@ public class enemy : MonoBehaviour
         if (count_collisions > max_collision) {
             Destroy (gameObject);
             game_manager.Instance.hello ();
+			game_manager.Instance.hello ();
+			game_manager.Instance.hello ();
+			game_manager.Instance.hello ();
         }
     }
 
